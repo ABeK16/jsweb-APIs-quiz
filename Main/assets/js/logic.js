@@ -1,36 +1,90 @@
 // add variables that keep track of the quiz "state"
 let currentQuestionIndex = 0;
+import { questions} from 'question.js';
+console.log (questions);
 let time = questions.length * 15;
 let timerId;
 
 // add variables to reference DOM elements
 // example is below
 let questionsEl = document.getElementById('questions');
-
+let choicesEl = document.getElementById ('choices');
 
 // reference the sound effects
 let sfxRight = new Audio('assets/sfx/correct.wav');
 let sfxWrong = new Audio('assets/sfx/incorrect.wav');
 
+startBtn.onclick = startQuiz;
+// Get reference to the Start Quiz button
+const startBtn = document.getElementById('startBtn');
+
+// Event listener for button to start the quiz
+startBtn.addEventListener('click', startQuiz);
+
 function startQuiz() {
   // hide start screen
-
-
+  const startScreen = document.getElementById('start-screen');
+  startScreen.style.display = 'none';
   // un-hide questions section
+  const questions = document.getElementById('questions');
+  questions.style.display = 'none';
 
+  console.log('startQuiz function called');
   // start timer
+  startTimer ();
 
   // show starting time
+  displayTime();
 
   // call a function to show the next question
   getQuestion();
 }
 
+// Function to start the timer
+function startTimer() {
+  timerId = setInterval (function () {
+    time--;
+
+    // Check if time has run out
+    if (time <= 0) {
+      endQuiz();
+    }
+
+    // Display updated time
+    displayTime();
+  }, 1000);
+  }
+
 function getQuestion() {
   // get current question object from array
+  const currentQuestion = questions[currentQuestionIndex];
+ // Initialize a variable to keep track of the current question index
+let currentQuestionIndex = 0;
 
+// Function to get the next question
+function getNextQuestion() {
+  // Check if there are more questions in the array
+  if (currentQuestionIndex < questions.length) {
+    // Get the next question and increment the index
+    const nextQuestion = questions[currentQuestionIndex];
+    currentQuestionIndex++;
+    return nextQuestion;
+  } else {
+    // Return null or handle the case when there are no more questions
+    return null;
+  }
+}
+
+// Example usage:
+const nextQuestion = getNextQuestion();
+if (nextQuestion) {
+  console.log(nextQuestion.question);
+  console.log(nextQuestion.choices);
+} else {
+  console.log("No more questions");
+}
   // update title with current question
-
+  questionsEl.textContent = currentQuestion.question;
   // clear out any old question choices
 
   // loop over the choices for each question
@@ -65,12 +119,11 @@ function questionClick(event) {
 
   // display "wrong" feedback on page
 
-} else {
+}// else {
   // play "right" sound effect
 
-  // display "right" feedback on page by displaying the text "Correct!" in the feedback element
+  // display "right" feedback on page by displaying the text "Correct!" in the feedback element}
 
-}
 // flash right/wrong feedback on page for half a second
 // set the feedback element to have the class of "feedback"
 
@@ -89,7 +142,7 @@ currentQuestionIndex++;
 // define the steps of the QuizEnd function...when the quiz ends...
 function quizEnd() {
   // stop the timer
-
+  clearInterval(timerId);
   // show end screen
 
   // show final score

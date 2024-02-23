@@ -22,7 +22,14 @@
           limit. Keep in mind that incorrect answers will penalize your
           score/time by 15 seconds!
         </p>
-        <button id="start">Start Quiz</button>
+
+        <button id="startBtn">Start Quiz</button>
+        <script src="assets/js/logic.js"></script>
+        <script>
+          // Add an event listener to the button
+          document.getElementById('startBtn').addEventListener('click', startQuiz);
+        </script>
+
       </div>
 
       <div id="questions" class="hide">

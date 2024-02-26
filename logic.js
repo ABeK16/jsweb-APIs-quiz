@@ -5,7 +5,7 @@ let currentQuestionIndex = 0;
 //import { questions} from 'questions.js';
 //<script src="./assets/js/questions.js"></script>
 // Import the questions array
-import { questions } from './questions.js';
+import { questions } from 'questions.js';
 
 // Get the length of the 'questions' array
 const numberOfQuestions = questions.length;

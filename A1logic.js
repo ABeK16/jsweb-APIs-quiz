@@ -8,8 +8,8 @@ let questionsEl = document.getElementById('questions');
 let choicesEl = document.getElementById('choices'); // assuming you have a container for choices in your HTML
 
 // Sound effects
-let sfxRight = new Audio('assets/sfx/correct.wav');
-let sfxWrong = new Audio('assets/sfx/incorrect.wav');
+let sfxRight = new Audio('correct.wav');
+let sfxWrong = new Audio('incorrect.wav');
 
 // Function to start the quiz
 function startQuiz() {

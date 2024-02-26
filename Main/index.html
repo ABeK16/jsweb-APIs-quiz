@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coding Quiz</title>
 <!-- -->
-   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
   <body>
@@ -22,16 +22,10 @@
           limit. Keep in mind that incorrect answers will penalize your
           score/time by 15 seconds!
         </p>
-
-
-        <p  id="outputParagraph"> 
-
-</p>
-  
-  
+        <p  id="outputParagraph"> </p>
 
         <button id="startBtn">Start Quiz</button>
-        <script src="A2logic.js">
+        <script src="assets/js/A2logic.js">
           // Add an event listener to the button
           document.getElementById('startBtn').addEventListener('click', startQuiz);
         </script>
@@ -56,9 +50,9 @@
       <div id="feedback" class="feedback hide"></div>
     </div>
 
-    <script type="module" src="questions.js"></script>
-    <script type="module" src="A2logic.js"></script>
-    <script src="questions.js"></script>
-    <script src="A2logic.js"></script>
+    <script type="module" src="./assets/js/questions.js"></script>
+    <script type="module" src="./assets/js/A2logic.js"></script>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/A2logic.js"></script>
   </body>
 </html>

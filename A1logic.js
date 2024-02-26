@@ -24,7 +24,7 @@ function startQuiz() {
   displayTime();
 
   // Call a function to show the first question
-  getQuestion();
+  showNextQuestion();
 }
 
 // Function to start the timer
@@ -43,7 +43,7 @@ function startTimer() {
 }
 
 // Function to display the current question
-function getQuestion() {
+function showNextQuestion() {
   // Get the current question object
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -88,7 +88,7 @@ function questionClick(event) {
   // Check if we've run out of questions
   if (currentQuestionIndex < questions.length) {
     // Show the next question
-    getQuestion();
+    showNextQuestion();
   } else {
     // No more questions, end the quiz
     endQuiz();

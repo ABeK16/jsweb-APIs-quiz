@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coding Quiz</title>
-
-   <!-- <link rel="stylesheet" href="./assets/css/styles.css" />-->
+<!-- -->
+   <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
   <body>
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="timer">Time: <span id="time">1000</span></div>
 
     <div class="wrapper">
       <div id="start-screen" class="start">
@@ -23,9 +23,15 @@
           score/time by 15 seconds!
         </p>
 
+
+        <p  id="outputParagraph"> 
+
+</p>
+  
+  
+
         <button id="startBtn">Start Quiz</button>
-        <script src="assets/js/logic.js"></script>
-        <script>
+        <script src="assets/js/A2logic.js">
           // Add an event listener to the button
           document.getElementById('startBtn').addEventListener('click', startQuiz);
         </script>
@@ -35,6 +41,7 @@
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices"></div>
+
       </div>
 
       <div id="end-screen" class="hide">
@@ -49,7 +56,9 @@
       <div id="feedback" class="feedback hide"></div>
     </div>
 
+    <script type="module" src="./assets/js/questions.js"></script>
+    <script type="module" src="./assets/js/A2logic.js"></script>
     <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/logic.js"></script>
+    <script src="./assets/js/A2logic.js"></script>
   </body>
 </html>

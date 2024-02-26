@@ -33,3 +33,18 @@ var questions = [
     answer: 'console.log',
   },
 ];
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the length of the 'questions' array
+  let numberOfQuestions = questions.length;
+
+  // Now 'numberOfQuestions' contains the length of the array
+  console.log(numberOfQuestions);
+});
+// Get the length of the 'questions' array
+var numberOfQuestions = questions.length;
+
+// Now 'numberOfQuestions' contains the length of the array
+console.log(numberOfQuestions);
+
+export {questions};

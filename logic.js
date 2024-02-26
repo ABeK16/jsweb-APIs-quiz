@@ -1,10 +1,19 @@
+
 // add variables that keep track of the quiz "state"
 let currentQuestionIndex = 0;
-import { questions} from 'logic.js';
 
-<script src="./assets/js/questions.js"></script>
+//import { questions} from 'questions.js';
+//<script src="./assets/js/questions.js"></script>
+// Import the questions array
+import { questions } from './questions.js';
+
+// Get the length of the 'questions' array
+const numberOfQuestions = questions.length;
+
+// Now you can use 'numberOfQuestions' in this file
+console.log(`There are ${numberOfQuestions} questions.`);
 console.log (questions);
-let time = questions.length * 15;
+let time = numberOfQuestions* 15;
 let timerId;
 
 // add variables to reference DOM elements
@@ -16,7 +25,7 @@ let choicesEl = document.getElementById ('choices');
 let sfxRight = new Audio('assets/sfx/correct.wav');
 let sfxWrong = new Audio('assets/sfx/incorrect.wav');
 
-startBtn.onclick = startQuiz;
+startBtn.onclick = startQuiz();
 // Get reference to the Start Quiz button
 const startBtn = document.getElementById('startBtn');
 
